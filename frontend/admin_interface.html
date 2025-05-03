@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Management System</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <link rel="stylesheet" href="./assets/styles/general.css">
+  <link rel="stylesheet" href="./assets/styles/admin_interface.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Manage Users</a>
+    <a href="#">Leave Requests</a>
+    <a href="#">Leave Calendar</a>
+    <a href="#">Descriptive Analytics</a>
+    <a href="#">Logout</a>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Welcome, Admin</h1>
+      <div>
+        <button>Notifications 🔔</button>
+        <button>Profile</button>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Pending Requests</h3>
+        <p>3</p>
+      </div>
+      <div class="card">
+        <h3>Total Approved</h3>
+        <p>25</p>
+      </div>
+      <div class="card">
+        <h3>Top Leave Takers</h3>
+        <p>Jasper Anave</p>
+      </div>
+    </div>
+
+    <div class="admin-chart">
+      <h3>Monthly Leave Trends</h3>
+      <canvas id="leaveChart" width="600" height="300"></canvas>
+    </div>
+
+    <div class="table">
+      <h3>Pending Leave Requests</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Type</th>
+            <th>Dates</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>IT</td>
+            <td>Sick</td>
+            <td>2025-05-01 to 2025-05-03</td>
+            <td>Pending</td>
+            <td><button>Approve</button> <button>Reject</button></td>
+          </tr>
+          <tr>
+            <td>Ana Cruz</td>
+            <td>HR</td>
+            <td>Casual</td>
+            <td>2025-05-05</td>
+            <td>Pending</td>
+            <td><button>Approve</button> <button>Reject</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('leaveChart').getContext('2d');
+    const leaveChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Leaves Taken',
+          data: [5, 9, 6, 3, 7, 4],
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

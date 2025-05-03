@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leave Management System - User Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="./assets/styles/general.css">
+  <link rel="stylesheet" href="./assets/styles/user_interface.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Leave System</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Apply for Leave</a>
+    <a href="#">My Leave Status</a>
+    <a href="#">Leave Calendar</a>
+    <a href="#">My Analytics</a>
+    <a href="#">Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="header">
+      <h1>Welcome, User</h1>
+      <div>
+        <button>Notifications 🔔</button>
+        <button>Profile</button>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Total Leaves Taken</h3>
+        <p>5</p>
+      </div>
+      <div class="card">
+        <h3>Leave Balance</h3>
+        <p>10</p>
+      </div>
+      <div class="card">
+        <h3>Pending Requests</h3>
+        <p>2</p>
+      </div>
+    </div>
+
+    <div class="chart">
+      <h3>Leave Distribution</h3>
+      <canvas id="leaveChart" width="400" height="200"></canvas>
+    </div>
+
+    <div class="table">
+      <h3>Recent Leave Applications</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-05-01</td>
+            <td>Casual</td>
+            <td>Approved</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-04-18</td>
+            <td>Sick</td>
+            <td>Pending</td>
+            <td>Doctor's appointment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('leaveChart').getContext('2d');
+    const leaveChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Sick Leave', 'Casual Leave', 'Vacation'],
+        datasets: [{
+          label: 'Leave Distribution',
+          data: [2, 2, 1], // Example static data
+          backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          },
+          title: {
+            display: true,
+            text: 'Leave Distribution by Type'
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

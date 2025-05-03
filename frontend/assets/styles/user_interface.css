@@ -1,0 +1,41 @@
+@import url('variables.css');
+
+.main {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: var(--padding-2);
+    overflow-y: auto;
+  }
+
+
+
+
+  .chart {
+    background-color: white;
+    padding: var(--padding-2);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-1);
+    margin-bottom: var(--margin-bottom-2);
+    width: 50%;
+  }
+
+  .table {
+    background-color: white;
+    padding: var(--padding-2);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-1);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: var(--padding-1);
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #ccc;
+  }
