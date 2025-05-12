@@ -1,15 +1,5 @@
 @import url('variables.css');
 
-.main {
-    flex: 1;
-    background-color: #f5f5f5;
-    padding: var(--padding-2);
-    overflow-y: auto;
-  }
-
-
-
-
   .chart {
     background-color: white;
     padding: var(--padding-2);
@@ -19,14 +9,24 @@
     width: 50%;
   }
 
+  
+
+  table {
+    display: none;
+  }
+
   .table {
     background-color: white;
     padding: var(--padding-2);
     border-radius: var(--border-radius-card);
     box-shadow: var(--shadow-1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  table {
+  table.active {
+    display: table;
     width: 100%;
     border-collapse: collapse;
   }
@@ -34,8 +34,61 @@
   th, td {
     padding: var(--padding-1);
     border-bottom: 1px solid #ddd;
+    text-align: center;
   }
 
   th {
     background-color: #ccc;
+  }
+
+  .table-nav-cont {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .table-nav {
+    background: #f0f0f0;
+    max-width: max-content;
+    padding: 0.3rem;
+    display: flex;
+    border-radius: 5px;
+  }
+
+  .table-nav-cont .apply-leave-btn {
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: green;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.25s;
+  }
+
+  .table-nav-cont .apply-leave-btn:hover {
+    box-shadow: 0 0 0.2rem green;
+    background: rgb(1, 197, 1);
+  }
+
+  .table-nav-cont .apply-leave-btn:active {
+    background: rgb(1, 172, 1);
+  }
+
+  .table-nav button {
+    padding: 0.2rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-weight: 550;
+  }
+
+  .table-nav button.active {
+    background: white;
+  }
+
+  .table-nav button:hover {
+    background: white;
   }

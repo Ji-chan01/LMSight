@@ -17,11 +17,11 @@
     <a href="#">Manage Users</a>
     <a href="#">Leave Requests</a>
     <a href="#">Leave Calendar</a>
-    <a href="#">Descriptive Analytics</a>
+    <a href="#">Descriptive Analytics</a> 
     <a href="#">Logout</a>
   </div>
 
-  <div class="main">
+  <main class="main">
     <div class="header">
       <h1>Welcome, Admin</h1>
       <div>
@@ -45,9 +45,54 @@
       </div>
     </div>
 
-    <div class="admin-chart">
-      <h3>Monthly Leave Trends</h3>
-      <canvas id="leaveChart" width="600" height="300"></canvas>
+    <div class="charts-cont">
+      <div class="admin-chart">
+        <h3>Monthly Leave Trends</h3>
+        <canvas id="leaveChart" width="600" height="300"></canvas>
+      </div>
+      <div class="insights">
+        <div class="top">
+          <h1>Incoming leaves</h1>
+        </div>
+        <div class="middle">
+          <h4>NAME</h4>
+          <h4>START</h4>
+          <h4>END</h4>
+          <h4>TYPE</h4>
+        </div>
+        <div class="bot">
+          <div class="insight-item">
+            <span id="name">Pogi si ako</span>
+            <span>2025-10-10</span>
+            <span>2025-10-10</span>
+            <span>Sick Leave</span>
+          </div>
+          <div class="insight-item">
+            <span id="name">Pogi si ako</span>
+            <span>2025-10-10</span>
+            <span>2025-10-10</span>
+            <span>Sick Leave</span>
+          </div>
+          <div class="insight-item">
+            <span id="name">Pogi si ako</span>
+            <span>2025-10-10</span>
+            <span>2025-10-10</span>
+            <span>Sick Leave</span>
+          </div>
+          <div class="insight-item">
+            <span id="name">Pogi si ako</span>
+            <span>2025-10-10</span>
+            <span>2025-10-10</span>
+            <span>Sick Leave</span>
+          </div>
+          <div class="insight-item">
+            <span id="name">Pogi si ako</span>
+            <span>2025-10-10</span>
+            <span>2025-10-10</span>
+            <span>Sick Leave</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="table">
@@ -83,7 +128,7 @@
         </tbody>
       </table>
     </div>
-  </div>
+  </main>
 
   <script>
     const ctx = document.getElementById('leaveChart').getContext('2d');

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Municipal Leave Management Login</title>
+ <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e3eaf2, #dce2ec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.login-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  color: #0d2c54;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+form {
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0d2c54;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1a3f75;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-links ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  font-size: 13px;
+  color: #666;
+}
+
+.footer-links ul li::after {
+  content: "•";
+  margin: 0 6px;
+  color: #999;
+}
+
+.footer-links ul li:last-child::after {
+  content: "";
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+.footer-links ul li a:hover {
+  color: #0d2c54;
+}
+
+ </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="title">Municipality of [Your Town]</h1>
+      <p class="subtitle">Leave Management System</p>
+      
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        
+        <button type="submit">Login</button>
+      </form>
+      
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

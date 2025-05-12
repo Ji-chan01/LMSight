@@ -6,14 +6,15 @@
   <title>Leave Management System - User Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link rel="stylesheet" href="./assets/styles/general.css">
   <link rel="stylesheet" href="./assets/styles/user_interface.css">
 </head>
 <body>
 
-  <!-- Sidebar -->
   <div class="sidebar">
-    <h2>Leave System</h2>
+    <h2>LMSight</h2>
     <a href="#">Dashboard</a>
     <a href="#">Apply for Leave</a>
     <a href="#">My Leave Status</a>
@@ -22,13 +23,22 @@
     <a href="#">Logout</a>
   </div>
 
-  <!-- Main Content -->
-  <div class="main">
+  <main class="main dashboard active">
     <div class="header">
       <h1>Welcome, User</h1>
-      <div>
-        <button>Notifications 🔔</button>
-        <button>Profile</button>
+      <div class="button-main-cont">
+        <div class="button-cont">
+          <button class="notif-btn">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+          <p class="popup">Notification</p>
+        </div>
+        <div class="button-cont">
+          <button class="profile-btn">
+            <i class="fa-solid fa-circle-user"></i>
+          </button>
+          <p class="popup">Profile</p>
+        </div>
       </div>
     </div>
 
@@ -45,69 +55,213 @@
         <h3>Pending Requests</h3>
         <p>2</p>
       </div>
-    </div>
-
-    <div class="chart">
-      <h3>Leave Distribution</h3>
-      <canvas id="leaveChart" width="400" height="200"></canvas>
-    </div>
+    </div>    
 
     <div class="table">
-      <h3>Recent Leave Applications</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Type</th>
-            <th>Status</th>
-            <th>Remarks</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2025-05-01</td>
-            <td>Casual</td>
-            <td>Approved</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>2025-04-18</td>
-            <td>Sick</td>
-            <td>Pending</td>
-            <td>Doctor's appointment</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+      <h3>Leave History</h3>
+      <div class="table-nav-cont">
+        <div class="table-nav">
+          <button class="approve-btn active">Approved</button>
+          <button class="pending-btn">Pending</button>
+          <button class="reject-btn">Rejected</button>
+        </div>
+        <button class="apply-leave-btn">
+          <i class="fa-solid fa-plus"></i>
+          Apply Leave
+        </button>
+      </div>
+      <div class="table-cont">
+        <table class="approved_table active">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-05-01</td>
+              <td>Casual</td>
+              <td>Approved</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Approved</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+          </tbody>
+        </table>
 
-  <script>
-    const ctx = document.getElementById('leaveChart').getContext('2d');
-    const leaveChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        labels: ['Sick Leave', 'Casual Leave', 'Vacation'],
-        datasets: [{
-          label: 'Leave Distribution',
-          data: [2, 2, 1], // Example static data
-          backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'bottom'
-          },
-          title: {
-            display: true,
-            text: 'Leave Distribution by Type'
-          }
-        }
-      }
-    });
-  </script>
+        <table class="pending_table ">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-05-01</td>
+              <td>Casual</td>
+              <td>Pending</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="rejected_table ">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-05-01</td>
+              <td>Casual</td>
+              <td>Approved</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+            <tr>
+              <td>2025-04-18</td>
+              <td>Sick</td>
+              <td>Pending</td>
+              <td>Doctor's appointment</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <main class="main ">
+
+  </main>
+
+  <script src="./assets/scripts/user_interface.js"></script>
 
 </body>
 </html>
