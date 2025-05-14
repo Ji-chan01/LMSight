@@ -1,4 +1,4 @@
-.main {
+.main.active {
     background: var(--primary-background);
 }
 
@@ -189,8 +189,11 @@ footer p {
     font-family: 'Times New Roman', Times, serif;
   }
 
-  footer a {
+  footer a:hover {
     color: black;
+  }
+  footer a {
+    color: gray;
     font-family: 'Times New Roman', Times, serif;
   }
   

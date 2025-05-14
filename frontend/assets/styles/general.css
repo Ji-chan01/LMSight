@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     display: flex;
     height: 100vh;
@@ -23,9 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    background-color: var(--primary-gray);
     padding: var(--padding-2);
-    overflow-y: auto;
   }
 
   .header {
@@ -71,6 +70,28 @@ body {
     border-radius: var(--border-radius-card);
     flex: 1;
     box-shadow: var(--shadow-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between  ;
+    height: 115px;
+  }
+
+  .card .top-sec,
+  .card .bot-sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .this-month-txt {
+    font-size: 0.9rem;
+    color: #707070;
+    align-self: flex-end;
+  }
+
+  .card .notif-nums {
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
   .button-main-cont {

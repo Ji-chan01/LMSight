@@ -23,243 +23,295 @@
     <a href="#">Logout</a>
   </div>
 
-  <main class="main dashboard active">
-    <div class="header">
-      <h1>Welcome, User</h1>
-      <div class="button-main-cont">
-        <div class="button-cont">
-          <button class="notif-btn">
-            <i class="fa-solid fa-bell"></i>
-          </button>
-          <p class="popup">Notification</p>
+  <main class="main-cont">
+    <div class="main active">
+      <div class="header">
+        <h1>Welcome, User</h1>
+        <div class="button-main-cont">
+          <div class="button-cont">
+            <button class="notif-btn">
+              <i class="fa-solid fa-bell"></i>
+            </button>
+            <p class="popup">Notification</p>
+          </div>
+          <div class="button-cont">
+            <button class="profile-btn">
+              <i class="fa-solid fa-circle-user"></i>
+            </button>
+            <p class="popup">Profile</p>
+          </div>
         </div>
-        <div class="button-cont">
-          <button class="profile-btn">
-            <i class="fa-solid fa-circle-user"></i>
-          </button>
-          <p class="popup">Profile</p>
+      </div>
+  
+      <div class="cards">
+        <div class="card">
+          <div class="top-sec">
+            <h3>Total Leaves Taken</h3>
+            <button aria-label="More options">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+          </div>
+          <div class="bot-sec">
+            <p class="notif-nums">5</p>
+            <p class="this-month-txt">This month</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="top-sec">
+            <h3>Leave Balance</h3>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <div class="bot-sec">
+            <p class="notif-nums">10</p>
+            <p class="this-month-txt">This month</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="top-sec">
+            <h3>Pending Requests</h3>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <div class="bot-sec">
+            <p class="notif-nums">2</p>
+            <p class="this-month-txt">This month</p>
+          </div>
+        </div>
+      </div>    
+  
+      <div class="table">
+        <h3>Leave History</h3>
+        <div class="table-nav-cont">
+          <div class="table-nav active">
+            <button class="approve-btn active">Approved</button>
+            <button class="pending-btn">Pending</button>
+            <button class="reject-btn">Rejected</button>
+          </div>
+          <div class="flip-container" id="flipContainer">
+            <div class="flipper">
+              <button class="apply-leave-btn">
+                <i class="fa-solid fa-plus"></i>
+                Apply Leave
+              </button>
+              <button class="leave-table-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Table
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <div class="table-form-cont">
+          <div class="table-cont active">
+            <table class="approved_table active">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Type</th>
+                  <th>Comment</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2025-05-01</td>
+                  <td>June 10</td>
+                  <td>June 20</td>
+                  <td>Vacation Leave</td>
+                  <td>
+                  <p class="comment">
+                      Going to asdfasd sdaf
+                  </p>
+                  </td>
+                  <td class="status">
+                    <p class="status-approved">
+                      Approved
+                    </p>
+                    
+                  </td>
+                </tr>                
+              </tbody>
+            </table>
+    
+            <table class="pending_table ">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Type</th>
+                  <th>Comment</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2025-05-01</td>
+                  <td>June 10</td>
+                  <td>June 20</td>
+                  <td>Vacation Leave</td>
+                  <td>
+                  <p class="comment">
+                      Going to asdfasd sdaf
+                  </p>
+                  </td>
+                  <td class="status">
+                    <p class="status-pending">
+                      Pending
+                    </p>
+                    
+                  </td>
+                  <td>
+                    <button id="edit_btn">
+                      <i class="fa-solid fa-pencil"></i>
+                    </button>
+                    <button>
+                      <i class="fa-solid fa-trash-can-arrow-up"></i>
+                    </button>
+                  </td>
+                </tr>        
+              </tbody>
+            </table>
+    
+            <table class="rejected_table ">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Type</th>
+                  <th>Comment</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2025-05-01</td>
+                  <td>June 10</td>
+                  <td>June 20</td>
+                  <td>Vacation Leave</td>
+                  <td>
+                  <p class="comment">
+                      Going to asdfasd sdaf
+                  </p>
+                  </td>
+                  <td class="status">
+                    <p class="status-rejected">
+                      Rejected
+                    </p>
+                    
+                  </td>
+                </tr>        
+              </tbody>
+            </table>
+          </div>
+  
+          <div class="apply-leave-cont ">
+            <div class="inputs-main">
+              <div class="inputs-cont">
+                <label for="emp_id">ID</label>
+                <input disabled type="text" value="0902-EMS0-5425">
+              </div>
+              <!-- <div class="img-cont">
+                <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+              </div> -->
+            </div>
+            <div class="inputs-main">
+              <div class="inputs-cont">
+                <label for="emp_id">Last name</label>
+                <input disabled class="name-input" type="text" value="Briol">
+              </div>
+              <div class="inputs-cont">
+                <label for="emp_id">First name</label>
+                <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+              </div>
+              <div class="inputs-cont">
+                <label for="emp_id">Middle name</label>
+                <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+              </div>
+              <div class="inputs-cont">
+                <label for="emp_id">Suffix</label>
+                <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+              </div>
+            </div>
+  
+            <div class="inputs-main">
+              <div class="inputs-cont">
+                <label for="leave_type">Leave Type</label>
+                <select name="" id="leave_type">
+                  <option value="" disabled selected>-- Please Select --</option>
+                  <option value="">Sick Leave</option>
+                  <option value="">Casual Leave</option>
+                  <option value="">Vacation Leave</option>
+                </select>
+              </div>
+              <div class="inputs-cont">
+                <label for="leave_type">Start Date</label>
+                <input type="date">
+              </div>
+              <div class="inputs-cont">
+                <label for="leave_type">End Date</label>
+                <input type="date">
+              </div>
+            </div>
+  
+            <div class="inputs-main">
+              <div class="inputs-reason-cont">
+                <label for="reason_for_leaving">Comment</label>
+                <textarea name="" id="reason_for_leaving"></textarea>
+              </div>
+            </div>
+  
+            <!-- <div class="inputs-main"> -->
+              <button class="submit_leave">Submit</button>
+            <!-- </div> -->
+          </div>
         </div>
       </div>
     </div>
+  </main>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Total Leaves Taken</h3>
-        <p>5</p>
-      </div>
-      <div class="card">
-        <h3>Leave Balance</h3>
-        <p>10</p>
-      </div>
-      <div class="card">
-        <h3>Pending Requests</h3>
-        <p>2</p>
-      </div>
-    </div>    
-
-    <div class="table">
-      <h3>Leave History</h3>
-      <div class="table-nav-cont">
-        <div class="table-nav">
-          <button class="approve-btn active">Approved</button>
-          <button class="pending-btn">Pending</button>
-          <button class="reject-btn">Rejected</button>
-        </div>
-        <button class="apply-leave-btn">
-          <i class="fa-solid fa-plus"></i>
-          Apply Leave
+  <div class="edit-modal">
+    <div class="edit-leave-cont ">
+      <header>
+        <h1>Edit Leave</h1>
+        <button id="close-edit-modal">
+          <i class="fa-solid fa-xmark"></i>
         </button>
+      </header>
+      <div class="inputs-main">
+        <div class="inputs-cont">
+          <label for="leave_type">Leave Type</label>
+          <select name="" id="leave_type">
+            <option value="" disabled selected>-- Please Select --</option>
+            <option value="">Sick Leave</option>
+            <option value="">Casual Leave</option>
+            <option value="">Vacation Leave</option>
+          </select>
+        </div>
+        <div class="inputs-cont">
+          <label for="leave_type">Start Date</label>
+          <input type="date">
+        </div>
+        <div class="inputs-cont">
+          <label for="leave_type">End Date</label>
+          <input type="date">
+        </div>
       </div>
-      <div class="table-cont">
-        <table class="approved_table active">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Remarks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2025-05-01</td>
-              <td>Casual</td>
-              <td>Approved</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Approved</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table class="pending_table ">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Remarks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2025-05-01</td>
-              <td>Casual</td>
-              <td>Pending</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table class="rejected_table ">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Remarks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2025-05-01</td>
-              <td>Casual</td>
-              <td>Approved</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-            <tr>
-              <td>2025-04-18</td>
-              <td>Sick</td>
-              <td>Pending</td>
-              <td>Doctor's appointment</td>
-            </tr>
-          </tbody>
-        </table>
+  
+      <div class="inputs-main">
+        <div class="inputs-reason-cont">
+          <label for="reason_for_leaving">Comment</label>
+          <textarea name="" id="reason_for_leaving"></textarea>
+        </div>
       </div>
+  
+      <button class="submit_leave">Save & Exit</button>
     </div>
-  </main>
+  </div>
 
-  <main class="main ">
-
-  </main>
 
   <script src="./assets/scripts/user_interface.js"></script>
 
