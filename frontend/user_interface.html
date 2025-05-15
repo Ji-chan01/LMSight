@@ -15,12 +15,44 @@
 
   <div class="sidebar">
     <h2>LMSight</h2>
-    <a href="#">Dashboard</a>
-    <a href="#">Apply for Leave</a>
-    <a href="#">My Leave Status</a>
-    <a href="#">Leave Calendar</a>
-    <a href="#">My Analytics</a>
-    <a href="#">Logout</a>
+    <div class="main-img-cont">
+      <div class="img-cont">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+        <input type="file" accept="image/*" id="image_file">
+        <label for="image_file">
+          <i class="fa-solid fa-camera"></i>
+        </label>
+      </div>
+    </div>
+    <div class="name-cont">
+      <h3 class="name">Hannah Denielle Teodoro</h3>
+    </div>
+
+    <div class="bot-sec">
+      <div class="jobs-desc-cont">
+        <p>Employee ID: E0956-T25</p>
+        <p>Department: CABA</p>
+        <p>Job title: Chief Executive Officer</p>
+        <p>Employment Type: Regular</p>
+      </div>
+      <div class="details-cont">
+        <p>
+          Vacation Leave: 3 / 5 used
+        </p>
+        <p>
+          Sick Leave: 3 / 5 used
+        </p>
+        <p>
+          Casual Leave: 5 / 10 used
+        </p>
+      </div>
+    </div>
+    <div class="button-cont">
+      <button>
+        Log Out
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </div>
   </div>
 
   <main class="main-cont">
@@ -28,6 +60,18 @@
       <div class="header">
         <h1>Welcome, User</h1>
         <div class="button-main-cont">
+          <div class="button-cont">
+            <button class="notif-btn ">
+              <i class="fa-solid fa-table-columns active"></i>
+            </button>
+            <p class="popup">Dashboard</p>
+          </div>
+          <div class="button-cont">
+            <button class="notif-btn">
+              <i class="fa-solid fa-chart-line"></i>
+            </button>
+            <p class="popup">Analytics</p>
+          </div>
           <div class="button-cont">
             <button class="notif-btn">
               <i class="fa-solid fa-bell"></i>
@@ -47,9 +91,6 @@
         <div class="card">
           <div class="top-sec">
             <h3>Total Leaves Taken</h3>
-            <button aria-label="More options">
-              <i class="fa-solid fa-ellipsis-vertical"></i>
-            </button>
           </div>
           <div class="bot-sec">
             <p class="notif-nums">5</p>
@@ -59,7 +100,6 @@
         <div class="card">
           <div class="top-sec">
             <h3>Leave Balance</h3>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
           <div class="bot-sec">
             <p class="notif-nums">10</p>
@@ -69,14 +109,30 @@
         <div class="card">
           <div class="top-sec">
             <h3>Pending Requests</h3>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
           <div class="bot-sec">
             <p class="notif-nums">2</p>
             <p class="this-month-txt">This month</p>
           </div>
         </div>
-      </div>    
+      </div>  
+      <div class="bottom-section"></div>
+      <div class="cards attendance-card">
+        <div class="top-sec">
+          <h3>Today's Attendance</h3>
+          <div id="clock"></div>
+        </div>
+        <p>Time In: <span id="time_in">--:--</span></p>
+        <p>Time Out: <span id="time_out">--:--</span></p>
+        <div class="buttons-cont">
+          <button>
+            Time in
+          </button>
+          <button>
+            Time out
+          </button>
+        </div>
+      </div>
   
       <div class="table">
         <h3>Leave History</h3>
@@ -167,7 +223,7 @@
                     <button id="edit_btn">
                       <i class="fa-solid fa-pencil"></i>
                     </button>
-                    <button>
+                    <button id="delete_btn">
                       <i class="fa-solid fa-trash-can-arrow-up"></i>
                     </button>
                   </td>
@@ -307,8 +363,30 @@
           <textarea name="" id="reason_for_leaving"></textarea>
         </div>
       </div>
-  
       <button class="submit_leave">Save & Exit</button>
+    </div>
+  </div>
+
+  <div class="delete-modal ">
+    <div class="delete-modal-cont">
+      <div class="top-sec">
+        <div class="icon">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+        <div class="question">
+          <p>Are you sure you want to cancel this request?</p>
+        </div>
+      </div>
+      <div class="bot-sec">
+        <button class="delete-modal-btn">
+          <!-- <i class="fa-solid fa-xmark"></i> -->
+          No
+        </button>
+        <button class="delete-modal-btn">
+          Yes
+          <!-- <i class="fa-solid fa-check"></i> -->
+        </button>
+      </div>
     </div>
   </div>
 

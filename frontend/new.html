@@ -1,66 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Municipal Leave Management Login</title>
- <style>
-.flip-container {
-  perspective: 1000px;
-  width: 150px;
-  height: 50px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leave Management System</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f9fafb;
 }
 
-.flipper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+.navbar {
+  background: #1e293b;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.front, .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #3498db;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.section {
+  padding: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #334155;
+}
+
+.btn {
+  background-color: #3b82f6;
   color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.back {
-  background-color: #2ecc71;
-  transform: rotateY(180deg);
+.btn:hover {
+  background-color: #2563eb;
 }
 
-.flip-container.flipped .flipper {
-  transform: rotateY(180deg);
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
+table th, table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
 
- </style>
+.attendance-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+  </style>
 </head>
 <body>
+  <nav class="navbar">
+    <h1>LeaveSys</h1>
+    <ul class="nav-links">
+      <li><a href="#dashboard">Dashboard</a></li>
+      <li><a href="#attendance">Attendance</a></li>
+      <li><a href="#profile">Profile</a></li>
+    </ul>
+  </nav>
 
-  <div class="flip-container" id="flipContainer">
-  <div class="flipper">
-    <button class="front" id="button1">Button 1</button>
-    <button class="back" id="button2">Button 2</button>
-  </div>
-</div>
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="section">
+      <h2>Dashboard</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Today's Attendance</h3>
+          <p>Time In: --:--</p>
+          <p>Time Out: --:--</p>
+          <button class="btn">Time In</button>
+          <button class="btn">Time Out</button>
+        </div>
 
+        <div class="card">
+          <h3>Leave Balance</h3>
+          <p>Vacation: 5 / 15</p>
+          <p>Sick: 3 / 10</p>
+        </div>
 
-<script>
- const flipContainer = document.getElementById('flipContainer');
+        <div class="card">
+          <h3>Pending Requests</h3>
+          <ul>
+            <li>Vacation Leave - Pending</li>
+            <li>Sick Leave - Approved</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-flipContainer.addEventListener('click', () => {
-  flipContainer.classList.toggle('flipped');
-});
+    <!-- ATTENDANCE -->
+    <section id="attendance" class="section">
+      <h2>Attendance</h2>
+      <div class="attendance-controls">
+        <label for="filter-month">Filter by Month:</label>
+        <input type="month" id="filter-month" />
+        <button class="btn">Export CSV</button>
+        <button class="btn">Export PDF</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time In</th>
+            <th>Time Out</th>
+            <th>Total Hours</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-05-15</td>
+            <td>08:55 AM</td>
+            <td>05:10 PM</td>
+            <td>8.25</td>
+            <td>On Time</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-
-</script>
+    <!-- PROFILE -->
+    <section id="profile" class="section">
+      <h2>Profile</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Personal Info</h3>
+          <p>Name: John Doe</p>
+          <p>Position: Software Engineer</p>
+          <p>Department: IT</p>
+        </div>
+        <div class="card">
+          <h3>Leave Summary</h3>
+          <p>Total Leaves Taken: 7 / 10</p>
+          <p>Vacation: 5 / 15</p>
+          <p>Sick: 3 / 10</p>
+          <p>Avg Clock-In Time (This Week): 08:59 AM</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

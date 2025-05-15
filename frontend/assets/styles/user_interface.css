@@ -176,7 +176,7 @@ tr .status p {
   display: flex;
   align-items: center;
   gap: 5px;
-  background: green;
+  background: black;
   border: none;
   color: white;
   cursor: pointer;
@@ -194,16 +194,15 @@ tr .status p {
 }
 
   .table-nav-cont .apply-leave-btn:hover,
-  .leave-table-btn:hover,
-  .submit_leave:hover {
-    background: rgb(0, 143, 0);
+  .leave-table-btn:hover {
+    background: rgb(20,20,20);
   }
 
   .table-nav-cont .apply-leave-btn:active,
   .leave-table-btn:active,
   .submit_leave:active {
-    background: rgb(0, 104, 0);
-    box-shadow: 0 0 0.2rem green;
+    background: rgb(30,30,30);
+    box-shadow: 0 0 0.2rem black;
   }
 
   .table-nav button {
@@ -365,15 +364,10 @@ tr .status p {
 }
 
 .edit-modal .edit-leave-cont header button {
-  padding: 10px;
+  padding: 5px;
   border-radius: 50%;
   cursor: pointer;
   border: 1px solid transparent;
-}
-
-.edit-modal .edit-leave-cont header button:hover {
-  color: green;
-  box-shadow: 0 0 0.2rem green;
 }
 
 .edit-modal .edit-leave-cont .inputs-main {
@@ -388,4 +382,226 @@ tr .status p {
   flex-direction: column;
   gap: 5px;
   width: 30%;
+}
+
+.delete-modal {
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.7);
+    pointer-events: none;
+}
+
+  .delete-modal.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .delete-modal .delete-modal-cont {
+    background: var(--primary-gray);
+    max-width: max-content;
+    padding: 1.3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: 0 0 0.2rem white;
+  }
+
+.delete-modal .delete-modal-cont p {
+  font-size: 1.2rem;
+  max-width: 250px;
+  font-weight: 550;
+}
+
+.delete-modal .delete-modal-cont button {
+  border: none;
+  width: 45px;
+  height: 40px;
+  border-radius: 10%;
+  color: white;
+  cursor: pointer;
+  margin-left: 5px;
+  letter-spacing: 1px;
+  font-weight: 550;
+}
+  .delete-modal .delete-modal-cont button:first-child {
+    background: red;
+  box-shadow: 0 0 0.2rem red;
+  }
+
+  .delete-modal .delete-modal-cont button:last-child {
+    background: green;
+  box-shadow: 0 0 0.2rem green;
+  }
+
+
+.delete-modal .delete-modal-cont button:active {
+  background: black;
+  box-shadow: 0 0 0.2rem black;
+}
+
+.delete-modal .top-sec i{
+  font-size: 2.5rem;
+  color: #3b82f6;
+  box-shadow: 0 0 0.5rem #3b82f6;
+  border-radius: 50%;
+}
+
+.delete-modal .top-sec {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.delete-modal .top-sec .icon {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .main-img-cont {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar .main-img-cont .img-cont {
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 0 0.2rem white;
+  position: relative;
+}
+
+.sidebar .button-cont button {
+  color: white;
+  border-radius: unset;
+  padding: 1.2rem;
+  width: 100%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sidebar .button-cont button:hover {
+  background: rgba(10,10,10, 0.2);
+}
+
+.sidebar .button-cont button i {
+  background: transparent;
+  color: white;
+}
+
+.sidebar .main-img-cont .img-cont i {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 7px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  box-shadow: 0 0 0.2rem white;
+  cursor: pointer;
+}
+
+.sidebar .main-img-cont .img-cont img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.sidebar .main-img-cont .img-cont input[type="file"] {
+  display: none;
+}
+
+.sidebar .bot-sec {
+  padding: 1rem;
+}
+
+.sidebar .name-cont {
+  margin-top: 25px;
+  justify-self: center;
+}
+
+.sidebar .name-cont .name {
+  text-align: center;
+  max-width: 225px;
+}
+
+.sidebar .details-cont {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  line-height: 1.5rem;
+  font-size: 0.8rem;
+  color: rgb(210, 210, 210);
+}
+
+.sidebar .jobs-desc-cont {
+  line-height: 1.5rem;
+  padding: 1rem;
+  border-top: 1px solid rgb(129, 129, 129);
+  border-bottom : 1px solid rgb(129, 129, 129);
+  font-size: 0.8rem;
+  color: rgb(210, 210, 210);
+}
+
+
+.attendance-card {
+  flex-direction: column;
+  width: 20rem;
+}
+
+.attendance-card button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+  .attendance-card button:hover {
+    background: rgb(20,20,20);
+  }
+
+  .attendance-card button:active {
+    background: rgb(30,30,30);
+    box-shadow: 0 0 0.2rem black;
+  }
+
+#clock {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.attendance-card .top-sec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-section {
+  display: flex;
+  gap:20px;
 }

@@ -14,6 +14,10 @@ const flipContainer = document.getElementById('flipContainer');
 const edit_btn = document.getElementById("edit_btn");
 const edit_modal = document.querySelector(".edit-modal");
 const close_modal = document.getElementById("close-edit-modal");
+const delete_modal = document.querySelector(".delete-modal");
+const delete_btn = document.getElementById("delete_btn");
+
+const delete_modal_btn = document.querySelectorAll(".delete-modal-btn");
 
 flipContainer.addEventListener('click', () => {
   flipContainer.classList.toggle('flipped');
@@ -46,3 +50,33 @@ edit_btn.addEventListener("click", () => {
 close_modal.addEventListener("click", () => {
     edit_modal.classList.remove("active");
 })
+
+delete_btn.addEventListener("click", () => {
+    delete_modal.classList.add("active");
+})
+
+delete_modal_btn.forEach((button) => {
+    button.addEventListener("click", () => {
+        delete_modal.classList.remove("active");
+    })
+})
+
+function updateClock() {
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+
+  // Add leading zeros
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  const timeString = `${hours}:${minutes}:${seconds}`;
+  document.getElementById("clock").textContent = timeString;
+}
+
+// Initial call
+updateClock();
+// Update every second
+setInterval(updateClock, 1000);
