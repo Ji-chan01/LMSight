@@ -178,6 +178,7 @@ body {
     pointer-events: none;
     transition: all 0.15s ease-in-out;
     letter-spacing: 1px;
+    z-index: 98;
   }
 
   .button-cont:hover .popup {

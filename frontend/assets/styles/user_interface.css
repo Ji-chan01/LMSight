@@ -61,20 +61,22 @@ tr .status p {
   font-weight: 550;
 }
 
-.status-approved {
+.status-approved,
+.status-present {
   color: green;
   background: rgba(0, 119, 0, 0.1);
 }
 
-.status-pending {
+.status-pending,
+.status-late {
   color: rgb(219, 143, 0);
   background: rgba(219, 143, 0, 0.1);
 }
 
-.status-rejected {
+.status-rejected,
+.status-absent {
   color: rgb(202, 0, 0);
-  background: rgba(202, 0, 0,0.1);
-  
+  background: rgba(202, 0, 0,0.1);  
 }
 
 
@@ -566,32 +568,89 @@ tr .status p {
 .attendance-card {
   flex-direction: column;
   width: 20rem;
+  justify-content: space-between;
+  background: var(--primary-background);
+  color: white;
 }
 
 .attendance-card button {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   border: none;
-  padding: 10px;
+  height: 100%;
+  width: 100%;
   border-radius: 3px;
   font-weight: 550;
   letter-spacing: 1px;
   cursor: pointer;
 }
 
+.attendance-card .flip-container {
+  width: 150px;
+  height: 50px;
+  perspective: 1000px;
+}
+
+.attendance-card .flipper {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.attendance-card .flip-container.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.attendance-card .front,
+.attendance-card .back {
+  border-radius: 10px;
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attendance-card .front {
+  background: #dff0d8; /* Light green */
+}
+
+.attendance-card .back {
+  background: #f2dede; /* Light red */
+  transform: rotateY(180deg);
+}
+
+
   .attendance-card button:hover {
-    background: rgb(20,20,20);
+    background: rgb(240, 240, 240);
   }
 
   .attendance-card button:active {
-    background: rgb(30,30,30);
-    box-shadow: 0 0 0.2rem black;
+    box-shadow: 0 0 0.2rem white;
   }
+
+.attendance-card .bots {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bots p {
+  font-weight: 550;
+}
+
+.bots span {
+  font-weight: normal;
+}
 
 #clock {
   font-family: 'Arial', sans-serif;
-  font-size: 1rem;
-  color: #333;
+  font-size: 3rem;
+  color: white;
   font-weight: bold;
 }
 
@@ -604,4 +663,134 @@ tr .status p {
 .bottom-section {
   display: flex;
   gap:20px;
+}
+
+.middle-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 300px;
+}
+
+.attendance-history {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.attendance-cont .attendance-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.attendance-cont {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.attendance-items .attendance-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.attendance-cont table th {
+  background: #AD1457;
+  font-size: 0.9rem;
+  color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ffeef8; /* Light gray */
+  }
+
+  tr:nth-child(odd) {
+    background-color: white; /* White */
+  }
+
+.notification-popup-cont {
+  display: none;
+  padding: 1rem;
+  padding-top: 0;
+  background: white;
+  position: absolute;
+  width: 300px;
+  max-height: 400px;
+  overflow: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 0.2rem var(--primary-background);
+  right: 2%;
+  top: 10%;
+  flex-direction: column;
+}
+
+.notification-popup-cont.active {
+  display: flex;
+}
+
+.notification-popup-cont h3 {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem 0;
+}
+
+
+.notif-item-cont {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid rgb(207, 207, 207);
+  padding: 0.5rem 0;
+}
+
+.notif-item-cont:first-of-type {
+  border-top: none;
+}
+.notif-item-cont .right p {
+  font-size: 0.9rem;
+}
+
+.notif-item-cont .right p.time {
+  font-size: 0.7rem;
+  color: gray;
+}
+
+.approver_name {
+  font-weight: 550;
+}
+
+.notif-dets {
+  font-weight: normal;
+}
+
+
+
+.notif-item-cont .left {
+  width: 60px;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.notif-item-cont .left img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.dashboard {
+  display: none;
+}
+
+.dashboard.active {
+  display: block;
+}
+
+.analytics {
+  display: none;
+}
+
+.analytics.active {
+  display: block;
 }

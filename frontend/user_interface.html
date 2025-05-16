@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="name-cont">
-      <h3 class="name">Hannah Denielle Teodoro</h3>
+      <h3 class="name">Christian Jireh Briol</h3>
     </div>
 
     <div class="bot-sec">
@@ -73,259 +73,337 @@
             <p class="popup">Analytics</p>
           </div>
           <div class="button-cont">
-            <button class="notif-btn">
+            <button class="notif-btn" id="notification-btn">
               <i class="fa-solid fa-bell"></i>
             </button>
             <p class="popup">Notification</p>
           </div>
-          <div class="button-cont">
-            <button class="profile-btn">
-              <i class="fa-solid fa-circle-user"></i>
-            </button>
-            <p class="popup">Profile</p>
-          </div>
         </div>
       </div>
   
-      <div class="cards">
-        <div class="card">
-          <div class="top-sec">
-            <h3>Total Leaves Taken</h3>
+      <div class="dashboard active">
+        <div class="cards">
+          <div class="card">
+            <div class="top-sec">
+              <h3>Total Leaves Taken</h3>
+            </div>
+            <div class="bot-sec">
+              <p class="notif-nums">5</p>
+              <p class="this-month-txt">This month</p>
+            </div>
           </div>
-          <div class="bot-sec">
-            <p class="notif-nums">5</p>
-            <p class="this-month-txt">This month</p>
+          <div class="card">
+            <div class="top-sec">
+              <h3>Leave Balance</h3>
+            </div>
+            <div class="bot-sec">
+              <p class="notif-nums">10</p>
+              <p class="this-month-txt">This month</p>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="top-sec">
-            <h3>Leave Balance</h3>
-          </div>
-          <div class="bot-sec">
-            <p class="notif-nums">10</p>
-            <p class="this-month-txt">This month</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="top-sec">
-            <h3>Pending Requests</h3>
-          </div>
-          <div class="bot-sec">
-            <p class="notif-nums">2</p>
-            <p class="this-month-txt">This month</p>
-          </div>
-        </div>
-      </div>  
-      <div class="bottom-section"></div>
-      <div class="cards attendance-card">
-        <div class="top-sec">
-          <h3>Today's Attendance</h3>
-          <div id="clock"></div>
-        </div>
-        <p>Time In: <span id="time_in">--:--</span></p>
-        <p>Time Out: <span id="time_out">--:--</span></p>
-        <div class="buttons-cont">
-          <button>
-            Time in
-          </button>
-          <button>
-            Time out
-          </button>
-        </div>
-      </div>
-  
-      <div class="table">
-        <h3>Leave History</h3>
-        <div class="table-nav-cont">
-          <div class="table-nav active">
-            <button class="approve-btn active">Approved</button>
-            <button class="pending-btn">Pending</button>
-            <button class="reject-btn">Rejected</button>
-          </div>
-          <div class="flip-container" id="flipContainer">
-            <div class="flipper">
-              <button class="apply-leave-btn">
-                <i class="fa-solid fa-plus"></i>
-                Apply Leave
-              </button>
-              <button class="leave-table-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                Back to Table
-              </button>
+          <div class="card">
+            <div class="top-sec">
+              <h3>Pending Requests</h3>
+            </div>
+            <div class="bot-sec">
+              <p class="notif-nums">2</p>
+              <p class="this-month-txt">This month</p>
             </div>
           </div>
         </div>
   
-        <div class="table-form-cont">
-          <div class="table-cont active">
-            <table class="approved_table active">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>From</th>
-                  <th>To</th>
-                  <th>Type</th>
-                  <th>Comment</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2025-05-01</td>
-                  <td>June 10</td>
-                  <td>June 20</td>
-                  <td>Vacation Leave</td>
-                  <td>
-                  <p class="comment">
-                      Going to asdfasd sdaf
-                  </p>
-                  </td>
-                  <td class="status">
-                    <p class="status-approved">
-                      Approved
-                    </p>
-                    
-                  </td>
-                </tr>                
-              </tbody>
-            </table>
+        <div class="middle-section">  
+          <div class="cards attendance-card">
+            <div class="top-sec">
+              <h3>Today's Attendance</h3>
+            </div>
+            <div class="middles">
+              <h4>Time:</h4>
+              <div id="clock"></div>
+            </div>
+            <div class="bots">
+              <p>Time In: <span id="time_in">--:--</span></p>
+              <p>Time Out: <span id="time_out">--:--</span></p>
+              <div id="flipContainer2" class="flip-container">
+                <div class="flipper">
+                  <!-- Front Side -->
+                  <div class="front">
+                    <button id="flipToBack">Time in</button>
+                  </div>
+  
+                  <!-- Back Side -->
+                  <div class="back">
+                    <button id="flipToFront">Time out</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="cards attendance-history">
+            <h3>Attendance History</h3>
+            <div class="attendance-cont">
+              <table class="attendance_table active">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2025-05-01</td>
+                    <td>Monday</td>
+                    <td>8:00 AM</td>
+                    <td>8:00 PM</td>
+                    <td class="status">
+                      <p class="status-present">
+                        Present
+                      </p>
+                    </td>
+                  </tr>                
+                  <tr>
+                    <td>2025-05-01</td>
+                    <td>Monday</td>
+                    <td>8:00 AM</td>
+                    <td>8:00 PM</td>
+                    <td class="status">
+                      <p class="status-late">
+                        Late
+                      </p>
+                    </td>
+                  </tr>                
+                  <tr>
+                    <td>2025-05-01</td>
+                    <td>Monday</td>
+                    <td>--:--</td>
+                    <td>--:--</td>
+                    <td class="status">
+                      <p class="status-absent">
+                        Absent
+                      </p>
+                    </td>
+                  </tr>                
+                  <tr>
+                    <td>2025-05-01</td>
+                    <td>Monday</td>
+                    <td>8:00 AM</td>
+                    <td>8:00 PM</td>
+                    <td class="status">
+                      <p class="status-approved">
+                        Present
+                      </p>
+                    </td>
+                  </tr>                
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
     
-            <table class="pending_table ">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>From</th>
-                  <th>To</th>
-                  <th>Type</th>
-                  <th>Comment</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2025-05-01</td>
-                  <td>June 10</td>
-                  <td>June 20</td>
-                  <td>Vacation Leave</td>
-                  <td>
-                  <p class="comment">
-                      Going to asdfasd sdaf
-                  </p>
-                  </td>
-                  <td class="status">
-                    <p class="status-pending">
-                      Pending
-                    </p>
-                    
-                  </td>
-                  <td>
-                    <button id="edit_btn">
-                      <i class="fa-solid fa-pencil"></i>
-                    </button>
-                    <button id="delete_btn">
-                      <i class="fa-solid fa-trash-can-arrow-up"></i>
-                    </button>
-                  </td>
-                </tr>        
-              </tbody>
-            </table>
-    
-            <table class="rejected_table ">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>From</th>
-                  <th>To</th>
-                  <th>Type</th>
-                  <th>Comment</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2025-05-01</td>
-                  <td>June 10</td>
-                  <td>June 20</td>
-                  <td>Vacation Leave</td>
-                  <td>
-                  <p class="comment">
-                      Going to asdfasd sdaf
-                  </p>
-                  </td>
-                  <td class="status">
-                    <p class="status-rejected">
-                      Rejected
-                    </p>
-                    
-                  </td>
-                </tr>        
-              </tbody>
-            </table>
+        <div class="table">
+          <h3>Leave History</h3>
+          <div class="table-nav-cont">
+            <div class="table-nav active">
+              <button class="approve-btn active">Approved</button>
+              <button class="pending-btn">Pending</button>
+              <button class="reject-btn">Rejected</button>
+            </div>
+            <div class="flip-container" id="flipContainer">
+              <div class="flipper">
+                <button class="apply-leave-btn">
+                  <i class="fa-solid fa-plus"></i>
+                  Apply Leave
+                </button>
+                <button class="leave-table-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  Back to Table
+                </button>
+              </div>
+            </div>
           </div>
-  
-          <div class="apply-leave-cont ">
-            <div class="inputs-main">
-              <div class="inputs-cont">
-                <label for="emp_id">ID</label>
-                <input disabled type="text" value="0902-EMS0-5425">
-              </div>
-              <!-- <div class="img-cont">
-                <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
-              </div> -->
+    
+          <div class="table-form-cont">
+            <div class="table-cont active">
+              <table class="approved_table active">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Type</th>
+                    <th>Comment</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2025-05-01</td>
+                    <td>June 10</td>
+                    <td>June 20</td>
+                    <td>Vacation Leave</td>
+                    <td>
+                    <p class="comment">
+                        Going to asdfasd sdaf
+                    </p>
+                    </td>
+                    <td class="status">
+                      <p class="status-approved">
+                        Approved
+                      </p>
+                      
+                    </td>
+                  </tr>                
+                </tbody>
+              </table>
+      
+              <table class="pending_table ">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Type</th>
+                    <th>Comment</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2025-05-01</td>
+                    <td>June 10</td>
+                    <td>June 20</td>
+                    <td>Vacation Leave</td>
+                    <td>
+                    <p class="comment">
+                        Going to asdfasd sdaf
+                    </p>
+                    </td>
+                    <td class="status">
+                      <p class="status-pending">
+                        Pending
+                      </p>
+                      
+                    </td>
+                    <td>
+                      <button id="edit_btn">
+                        <i class="fa-solid fa-pencil"></i>
+                      </button>
+                      <button id="delete_btn">
+                        <i class="fa-solid fa-trash-can-arrow-up"></i>
+                      </button>
+                    </td>
+                  </tr>        
+                </tbody>
+              </table>
+      
+              <table class="rejected_table ">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Type</th>
+                    <th>Comment</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2025-05-01</td>
+                    <td>June 10</td>
+                    <td>June 20</td>
+                    <td>Vacation Leave</td>
+                    <td>
+                    <p class="comment">
+                        Going to asdfasd sdaf
+                    </p>
+                    </td>
+                    <td class="status">
+                      <p class="status-rejected">
+                        Rejected
+                      </p>
+                      
+                    </td>
+                  </tr>        
+                </tbody>
+              </table>
             </div>
-            <div class="inputs-main">
-              <div class="inputs-cont">
-                <label for="emp_id">Last name</label>
-                <input disabled class="name-input" type="text" value="Briol">
+    
+            <div class="apply-leave-cont ">
+              <div class="inputs-main">
+                <div class="inputs-cont">
+                  <label for="emp_id">ID</label>
+                  <input disabled type="text" value="0902-EMS0-5425">
+                </div>
+                <!-- <div class="img-cont">
+                  <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+                </div> -->
               </div>
-              <div class="inputs-cont">
-                <label for="emp_id">First name</label>
-                <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+              <div class="inputs-main">
+                <div class="inputs-cont">
+                  <label for="emp_id">Last name</label>
+                  <input disabled class="name-input" type="text" value="Briol">
+                </div>
+                <div class="inputs-cont">
+                  <label for="emp_id">First name</label>
+                  <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+                </div>
+                <div class="inputs-cont">
+                  <label for="emp_id">Middle name</label>
+                  <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+                </div>
+                <div class="inputs-cont">
+                  <label for="emp_id">Suffix</label>
+                  <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+                </div>
               </div>
-              <div class="inputs-cont">
-                <label for="emp_id">Middle name</label>
-                <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+    
+              <div class="inputs-main">
+                <div class="inputs-cont">
+                  <label for="leave_type">Leave Type</label>
+                  <select name="" id="leave_type">
+                    <option value="" disabled selected>-- Please Select --</option>
+                    <option value="">Sick Leave</option>
+                    <option value="">Casual Leave</option>
+                    <option value="">Vacation Leave</option>
+                  </select>
+                </div>
+                <div class="inputs-cont">
+                  <label for="leave_type">Start Date</label>
+                  <input type="date">
+                </div>
+                <div class="inputs-cont">
+                  <label for="leave_type">End Date</label>
+                  <input type="date">
+                </div>
               </div>
-              <div class="inputs-cont">
-                <label for="emp_id">Suffix</label>
-                <input disabled class="name-input" type="text" value="0902-EMS0-5425">
+    
+              <div class="inputs-main">
+                <div class="inputs-reason-cont">
+                  <label for="reason_for_leaving">Comment</label>
+                  <textarea name="" id="reason_for_leaving"></textarea>
+                </div>
               </div>
+    
+              <!-- <div class="inputs-main"> -->
+                <button class="submit_leave">Submit</button>
+              <!-- </div> -->
             </div>
-  
-            <div class="inputs-main">
-              <div class="inputs-cont">
-                <label for="leave_type">Leave Type</label>
-                <select name="" id="leave_type">
-                  <option value="" disabled selected>-- Please Select --</option>
-                  <option value="">Sick Leave</option>
-                  <option value="">Casual Leave</option>
-                  <option value="">Vacation Leave</option>
-                </select>
-              </div>
-              <div class="inputs-cont">
-                <label for="leave_type">Start Date</label>
-                <input type="date">
-              </div>
-              <div class="inputs-cont">
-                <label for="leave_type">End Date</label>
-                <input type="date">
-              </div>
-            </div>
-  
-            <div class="inputs-main">
-              <div class="inputs-reason-cont">
-                <label for="reason_for_leaving">Comment</label>
-                <textarea name="" id="reason_for_leaving"></textarea>
-              </div>
-            </div>
-  
-            <!-- <div class="inputs-main"> -->
-              <button class="submit_leave">Submit</button>
-            <!-- </div> -->
           </div>
         </div>
       </div>
+
+      <div class="analytics ">
+        <div class="cards">
+          <h1>Attendance</h1>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -386,6 +464,136 @@
           Yes
           <!-- <i class="fa-solid fa-check"></i> -->
         </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="notification-popup-cont ">
+    <h3>Notifications</h3>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
+      </div>
+    </div>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
+      </div>
+    </div>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
+      </div>
+    </div>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
+      </div>
+    </div>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
+      </div>
+    </div>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
+      </div>
+    </div>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
+      </div>
+    </div>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
+      </div>
+    </div>
+    <div class="notif-item-cont">
+      <div class="left">
+        <img src="./assets/images/blank-profile-picture-973460.svg" alt="">
+      </div>
+      <div class="right">
+        <p class="approver_name">
+          Christian Jireh Briol
+          <span class="notif-dets">has accepted your love request</span>
+        </p>
+        <p class="time">
+          1min ago
+        </p>
       </div>
     </div>
   </div>
